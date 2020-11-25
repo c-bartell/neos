@@ -11,6 +11,7 @@ Please follow these instructions for further enlightenment.
 - Clone this repo
 - Run `bundle install` to download and install all of the necessary dependencies
 - This project uses NASA's Astroids - NeoWs API. Please signup for an API key [here](https://api.nasa.gov/)
+  - My API key: XBDiN26fsIAbqDEJGal3NaKHDujcZSPyUnmTJjZR
 - Once you have your api key, run `bundle exec figaro install`. This should create a file called `application.yml` located in the `config` folder. **Note:** This file is automatically gitignored and many IDEs do not show gitignored files by default. You may have to change your IDE's settings to show gitignored files.
 - Append your api_key to `application.yml` in the following format `nasa_api_key: <Your API KEY Goes Here>`
 - This project uses minitest. You can run the tests with the following command `ruby near_earth_objects_test.rb`
