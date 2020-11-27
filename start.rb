@@ -1,4 +1,4 @@
-require_relative 'near_earth_objects'
+require './lib/near_earth_objects.rb'
 # This needs to be broken into classes.
 # IO class
 puts "________________________________________________________________________________________________________________________________"
