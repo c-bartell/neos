@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require 'json'
-require_relative 'near_earth_objects'
+require './near_earth_objects.rb'
 
 class NearEarthObjectsTest < Minitest::Test
   def test_a_date_returns_a_list_of_neos
