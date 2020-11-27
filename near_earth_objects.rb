@@ -6,7 +6,9 @@ Figaro.application = Figaro::Application.new(environment: 'production', path: Fi
 Figaro.load
 
 class NearEarthObjects
+  # This method has too many responsibilities
   def self.find_neos_by_date(date)
+    # This could possibly be a class on it's own, like a request class or something.
     conn = Faraday.new(
       url: 'https://api.nasa.gov',
       params: { start_date: date, api_key: ENV['nasa_api_key']}
