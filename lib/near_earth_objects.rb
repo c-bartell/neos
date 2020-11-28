@@ -7,6 +7,7 @@ Figaro.application = Figaro::Application.new(environment: 'production', path: Fi
 Figaro.load
 
 class NearEarthObjects
+  # This class's job is to pull and parse the raw JSON data ONLY
   # This method has too many responsibilities
   def self.find_neos_by_date(date)
     # This could possibly be a class on it's own, like a request class or something.
@@ -17,6 +18,8 @@ class NearEarthObjects
     asteroids_list_data = conn.get('/neo/rest/v1/feed')
 
     parsed_asteroids_data = JSON.parse(asteroids_list_data.body, symbolize_names: true)[:near_earth_objects][:"#{date}"]
+    binding.pry
+    # Method should end here.
 
     largest_asteroid_diameter = parsed_asteroids_data.map do |asteroid|
       asteroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i
@@ -38,6 +41,7 @@ class NearEarthObjects
 
     {
       asteroid_list: formatted_asteroid_data,
+      # These could be class methods on a list of asteroids
       biggest_asteroid: largest_asteroid_diameter,
       total_number_of_asteroids: total_number_of_asteroids
     }
