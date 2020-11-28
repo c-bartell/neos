@@ -19,4 +19,8 @@ class AsteroidsTest < Minitest::Test
     expected = [@asteroid_1, @asteroid_2, @asteroid_3]
     assert_equal @asteroids.list, expected
   end
+
+  def test_it_can_find_largest_asteroid_diameter
+    assert_equal @asteroids.largest_asteroid_diameter, @asteroid_3.diameter
+  end
 end
