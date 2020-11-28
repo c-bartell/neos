@@ -19,4 +19,14 @@ class AsteroidTest < Minitest::Test
     assert_equal @asteroid.diameter, "#{@diameter} ft"
     assert_equal @asteroid.miss_distance, @miss_distance
   end
+
+  def test_it_can_return_a_hash_of_data
+    expected = {
+      name: @name,
+      diameter: diameter,
+      miss_distance: "#{@miss_distance} miles"
+    }
+
+    assert_equal expected, @asteroid.data_hash
+  end
 end
