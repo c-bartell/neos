@@ -22,13 +22,10 @@ class NearEarthObjects
 
     asteroids = self.create_asteroids(parsed_asteroids_data)
 
-    total_number_of_asteroids = parsed_asteroids_data.count
-
     {
       asteroid_list: asteroids.list,
       biggest_asteroid: asteroids.largest_asteroid_diameter,
-      # These could be class methods on a list of asteroids
-      total_number_of_asteroids: total_number_of_asteroids
+      total_number_of_asteroids: asteroids.number_of_asteroids
     }
   end
 
