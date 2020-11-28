@@ -16,7 +16,7 @@ class AsteroidTest < Minitest::Test
 
   def test_it_has_attributes
     assert_equal @asteroid.name, @name
-    assert_equal @asteroid.diameter, @diameter
+    assert_equal @asteroid.diameter, "#{@diameter} ft"
     assert_equal @asteroid.miss_distance, @miss_distance
   end
 end
