@@ -22,16 +22,12 @@ class NearEarthObjects
 
     asteroids = self.create_asteroids(parsed_asteroids_data)
 
-    largest_asteroid_diameter = parsed_asteroids_data.map do |asteroid|
-      asteroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i
-    end.max { |a,b| a<=> b}
-
     total_number_of_asteroids = parsed_asteroids_data.count
 
     {
       asteroid_list: asteroids.list,
+      biggest_asteroid: asteroids.largest_asteroid_diameter,
       # These could be class methods on a list of asteroids
-      biggest_asteroid: largest_asteroid_diameter,
       total_number_of_asteroids: total_number_of_asteroids
     }
   end
