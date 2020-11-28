@@ -5,15 +5,17 @@ require './lib/asteroids.rb'
 
 class AsteroidsTest < Minitest::Test
   def setup
-    @asteroid_1 = Asteroid.new('2011 GE3', '123 ft', '35542652 miles')
-    @asteroid_2 = Asteroid.new
+    @asteroid_1 = Asteroid.new('(2011 GE3)', 123, 35542652)
+    @asteroid_2 = Asteroid.new('(2019 FT)', 512, 5503325)
+    @asteroid_3 = Asteroid.new('(2019 GN3)', 537, 35277204)
+    @asteroids = Asteroids.new([@asteroid_1, @asteroid_2, @asteroid_3])
   end
 
   def test_it_exists
-
+    assert_instance_of Asteroids, @asteroids
   end
 
   def test_it_has_attributes
-
+    skip
   end
 end
