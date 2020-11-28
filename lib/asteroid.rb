@@ -10,4 +10,12 @@ class Asteroid
   def diameter
     "#{@diameter} ft"
   end
+
+  def data_hash
+    {
+      name: @name,
+      diameter: diameter,
+      miss_distance: "#{@miss_distance} miles"
+    }
+  end
 end

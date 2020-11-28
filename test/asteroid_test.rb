@@ -23,7 +23,7 @@ class AsteroidTest < Minitest::Test
   def test_it_can_return_a_hash_of_data
     expected = {
       name: @name,
-      diameter: diameter,
+      diameter: "#{@diameter} ft",
       miss_distance: "#{@miss_distance} miles"
     }
 
