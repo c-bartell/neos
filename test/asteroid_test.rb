@@ -5,8 +5,8 @@ require './lib/asteroid'
 class AsteroidTest < Minitest::Test
   def setup
     @name = '2011 GE3'
-    @diameter = '123 ft'
-    @miss_distance = '35542652 miles'
+    @diameter = 123
+    @miss_distance = 35542652
     @asteroid = Asteroid.new(@name, @diameter, @miss_distance)
   end
 
