@@ -7,7 +7,7 @@ class Asteroids
 
   def largest_asteroid_diameter
     @list.max_by do |asteroid|
-      asteroid.diameter
+      asteroid.diameter.to_i
     end.diameter
   end
 
