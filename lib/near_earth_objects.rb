@@ -18,7 +18,6 @@ class NearEarthObjects
     asteroids_list_data = conn.get('/neo/rest/v1/feed')
 
     parsed_asteroids_data = JSON.parse(asteroids_list_data.body, symbolize_names: true)[:near_earth_objects][:"#{date}"]
-    binding.pry
     # Method should end here.
 
     largest_asteroid_diameter = parsed_asteroids_data.map do |asteroid|
@@ -29,8 +28,8 @@ class NearEarthObjects
     formatted_asteroid_data = parsed_asteroids_data.map do |asteroid|
       Asteroid.new(
           asteroid[:name],
-          "#{asteroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i} ft",
-          "#{asteroid[:close_approach_data][0][:miss_distance][:miles].to_i} miles"
+          asteroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i,
+          asteroid[:close_approach_data][0][:miss_distance][:miles].to_i
       )
       # {
       #   name: asteroid[:name],
