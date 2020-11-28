@@ -10,4 +10,8 @@ class Asteroids
       asteroid.diameter
     end.diameter
   end
+
+  def number_of_asteroids
+    @list.count
+  end
 end

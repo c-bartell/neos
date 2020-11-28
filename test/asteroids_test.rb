@@ -23,4 +23,8 @@ class AsteroidsTest < Minitest::Test
   def test_it_can_find_largest_asteroid_diameter
     assert_equal @asteroids.largest_asteroid_diameter, @asteroid_3.diameter
   end
+
+  def test_it_can_find_number_of_asteroids
+    assert_equal @asteroids.number_of_asteroids, 3
+  end
 end
