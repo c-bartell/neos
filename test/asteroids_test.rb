@@ -16,6 +16,7 @@ class AsteroidsTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    skip
+    expected = [@asteroid_1, @asteroid_2, @asteroid_3]
+    assert_equal @asteroids.list, expected
   end
 end
